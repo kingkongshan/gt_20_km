@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GT_20_DLL_KM</name>
+    </assembly>
+    <members>
+        <member name="T:GT_20_DLL_KM.Device">
+            <summary>
+            仪器的接口
+            </summary>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.IsConnected">
+            <summary>
+            连接状态
+            </summary>
+            <returns>
+                    true:  连接成功
+                    false: 连接失败
+            </returns>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.ConnectServer(System.String)">
+            <summary>
+            设备连接
+            </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            连接异常，连接超时或者是连接ip不对
+            </exception>
+            <param name="ip">连接的ip地址</param>
+            <returns>  
+                    true:  连接成功
+                    false: 连接失败
+            </returns>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.DisconnetServer">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.SendFile(System.String)">
+            <summary>
+            发送文件
+            </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            发送文件异常，socket在发送文件中途断开
+            </exception>
+            <param name="fileName"></param>
+            <returns>
+                       true: 发送成功
+                       false: 发送失败， 请检查网络
+            </returns>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.StopPlay">
+            <summary>
+            通知平板可以停止培训
+            </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            网络异常
+            </exception>
+            <returns>
+                    true:  停止成功
+                    false: 停止失败，请检查网络
+            </returns>
+        </member>
+        <!-- 对于成员“M:GT_20_DLL_KM.Device.StartPlay”忽略有格式错误的 XML 注释 -->
+        <member name="T:GT_20_DLL_KM.Device.DetectHandler">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="E:GT_20_DLL_KM.Device.FinishPlay">
+            <summary>
+            仪器端在培训结束的时候，发送培训结束的信号
+            </summary>
+        </member>
+        <member name="E:GT_20_DLL_KM.Device.PausePlay">
+            <summary>
+            暂停培训信号,当在培训过程中切换到别的界面的时候，会发送这个信号。
+            可以用于上位平板判断提示用户已经暂停培训。
+            </summary>
+        </member>
+        <member name="E:GT_20_DLL_KM.Device.EncoderGet">
+            <summary>
+            编码器的获取
+            </summary>
+        </member>
+        <member name="M:GT_20_DLL_KM.Device.GetServerIpList">
+            <summary>
+            获取可用的仪器ip地址
+            </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            搜索异常，请稍后再搜索
+            </exception>
+            <returns>仪器列表</returns>
+        </member>
+        <member name="T:GT_20_DLL_KM.DeviceService.ResolvingMessageHandler">
+            <summary>
+            事件处理委托
+            </summary>
+            <param name="obj"></param>
+        </member>
+    </members>
+</doc>
